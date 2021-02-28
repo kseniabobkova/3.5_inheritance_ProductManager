@@ -9,7 +9,6 @@ import ru.netology.repository.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class ProductManagerTest {
 
     ProductRepository repository = new ProductRepository();
@@ -93,7 +92,6 @@ public class ProductManagerTest {
         Product[] expected = new Product[]{};
         Product[] actual = manager.searchBy("producer4");
         assertArrayEquals(expected, actual);
-
 
     }
 
