@@ -5,6 +5,26 @@ import java.util.Objects;
 public class Smartphone extends Product {
     private String producer;
 
+    public Smartphone() {
+        super();
+    }
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
+
+    public Smartphone(String producer) {
+        this.producer = producer;
+    }
+
+    public Smartphone(int id, String name, int price, String producer) {
+        super(id, name, price);
+        this.producer = producer;
+    }
 
     @Override
     public boolean equals(Object o) {

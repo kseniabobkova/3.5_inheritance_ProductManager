@@ -13,23 +13,22 @@ public class ProductManager {
         this.repository = repository;
     }
 
-    public void add(Product product) {
-        repository.save(product);
+    public void add(Product item) {
+        repository.save(item);
     }
 
-    public Product[] searcyBy(String text) {
+    public Product[] searchBy(String text) {
         Product[] result = new Product[0];
-        for (Product product : repository.findAll()) {
-            if (matches(product, text)) {
+        for (Product item : repository.findAll()) {
+            if (matches(item, text)) {
                 Product[] tmp = new Product[result.length + 1];
-                System.arraycopy(tmp, 0, result, 0, tmp.length);
-                tmp[tmp.length - 1] = product;
+                System.arraycopy(result, 0, tmp, 0, result.length);
+                tmp[tmp.length - 1] = item;
                 result = tmp;
             }
         }
         return result;
     }
-
 
     public boolean matches(Product product, String search) {
         if (product instanceof Book) {
@@ -37,10 +36,7 @@ public class ProductManager {
             if (book.getName().equalsIgnoreCase(search)) {
                 return true;
             }
-            if (book.getAuthor().equalsIgnoreCase(search)) {
-                return true;
-            }
-            return false;
+            return book.getAuthor().equalsIgnoreCase(search);
 
         }
         if (product instanceof Smartphone) {
@@ -48,7 +44,8 @@ public class ProductManager {
             if (smartphone.getName().equalsIgnoreCase(search)) {
                 return true;
             }
-            return false;
+
+            return smartphone.getProducer().equalsIgnoreCase(search);
         }
         return false;
     }
