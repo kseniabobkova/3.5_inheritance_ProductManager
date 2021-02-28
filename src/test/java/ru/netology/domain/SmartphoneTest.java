@@ -8,7 +8,6 @@ class SmartphoneTest {
     @Test
     public void shouldHaveAllFieldsAndMethodFromSuperClass() {
         Smartphone smartphone = new Smartphone();
-//    book.
     }
 
     @Test
@@ -16,7 +15,6 @@ class SmartphoneTest {
         Product product = new Smartphone();
         if (product instanceof Smartphone) {
             Smartphone smartphone = (Smartphone) product;
-//      book.
         }
     }
 

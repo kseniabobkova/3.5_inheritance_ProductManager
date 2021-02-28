@@ -19,4 +19,11 @@ public class Smartphone extends Product {
     public int hashCode() {
         return Objects.hash(super.hashCode(), producer);
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "produser='" + producer + '\'' +
+                '}';
+    }
 }

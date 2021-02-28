@@ -8,7 +8,6 @@ class BookTest {
     @Test
     public void shouldHaveAllFieldsAndMethodFromSuperClass() {
         Book book = new Book();
-//    book.
     }
 
     @Test
