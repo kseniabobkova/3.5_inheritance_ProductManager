@@ -1,4 +1,5 @@
 package ru.netology.manager;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Product;
@@ -26,7 +27,7 @@ public class ProductManagerTest {
     private Smartphone tenth = new Smartphone(1, "fourth", 200, "producer3");
 
     @BeforeEach
-        public void setUp() {
+    public void setUp() {
         manager.add(first);
         manager.add(second);
         manager.add(third);
@@ -40,23 +41,23 @@ public class ProductManagerTest {
     }
 
 
-        @Test
-        public void shouldSearchSame() {
+    @Test
+    public void shouldSearchSame() {
 
-            manager.searchBy("first");
+        manager.searchBy("first");
 
-            Product[] expected = new Product[] {first,third,sixth,eighth};
-            Product[] actual = manager.searchBy("first");
-            assertArrayEquals(expected, actual);
+        Product[] expected = new Product[]{first, third, sixth, eighth};
+        Product[] actual = manager.searchBy("first");
+        assertArrayEquals(expected, actual);
 
-        }
+    }
 
     @Test
     public void shouldSearchByAuthor() {
 
         manager.searchBy("author1");
 
-        Product[] expected = new Product[] {first,second};
+        Product[] expected = new Product[]{first, second};
         Product[] actual = manager.searchBy("author1");
         assertArrayEquals(expected, actual);
 
@@ -67,27 +68,29 @@ public class ProductManagerTest {
 
         manager.searchBy("Producer1");
 
-        Product[] expected = new Product[] {sixth,seventh};
+        Product[] expected = new Product[]{sixth, seventh};
         Product[] actual = manager.searchBy("Producer1");
         assertArrayEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSearchNotExistBook() {
 
         manager.searchBy("author4");
 
-        Product[] expected = new Product[] {};
+        Product[] expected = new Product[]{};
         Product[] actual = manager.searchBy("author4");
         assertArrayEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSearchNotExistSmartphone() {
 
         manager.searchBy("producer4");
 
-        Product[] expected = new Product[] {};
+        Product[] expected = new Product[]{};
         Product[] actual = manager.searchBy("producer4");
         assertArrayEquals(expected, actual);
 
